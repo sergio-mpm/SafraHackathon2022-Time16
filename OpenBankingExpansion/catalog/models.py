@@ -1,9 +1,8 @@
 from django.db import models
 
-class clientes(models.Model):
+class clienteid(models.Model):
     cliente_id = models.TextField(primary_key=True)
     secret = models.TextField()
-    token = models.TextField()
 
     class Meta:
         ordering = ['-clientes']
