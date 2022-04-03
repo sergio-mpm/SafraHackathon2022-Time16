@@ -131,6 +131,8 @@ DATE_FORMAT = 'd/m/Y'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+MEDIA_URL = '/img/'
+
 STATIC_URL = '/static/'
 if ENVIRONMENT == 'development':
     STATICFILES_DIRS = [
