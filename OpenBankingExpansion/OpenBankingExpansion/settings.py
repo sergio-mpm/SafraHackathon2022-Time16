@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import ibm_db_django
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
@@ -76,14 +77,13 @@ WSGI_APPLICATION = 'OpenBankingExpansion.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'mssql',
-        'NAME': 'OpenBankingExpansionServer',
-        'USERNAME': 'default',
-        'PASSWORD': '',
-        'HOST': 'http://127.0.0.1/',
-        'PORT': '8080',
-        'OPTIONS': {"driver": "ODBC Driver 17 for SQL Server",
-        },
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'openbankingexpansiondb',
+        'USERNAME': 'postgres',
+        'PASSWORD': 'administrator',
+        'HOST': 'openbankingexpansiondb.cbclvp7dwmrw.us-east-2.rds.amazonaws.com',
+        'PORT': '5432',
+        'PCONNECT': 'True', 
     },
 }
 
@@ -118,7 +118,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 DATE_FORMAT = 'd/m/Y'
 
