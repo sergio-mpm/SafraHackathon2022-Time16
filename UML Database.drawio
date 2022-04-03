@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-04-02T22:04:53.393Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36" etag="NSK4DRYdiNM_Ie9ROKM7" version="17.4.0" type="github">
+<mxfile host="app.diagrams.net" modified="2022-04-03T01:30:29.709Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36" etag="yrka8GzxdBiIkagHdjuX" version="17.4.0" type="github">
   <diagram name="UML Database" id="c4acf3e9-155e-7222-9cf6-157b1a14988f">
     <mxGraphModel dx="985" dy="637" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0">
       <root>
@@ -327,9 +327,8 @@
             <mxPoint x="250" y="350" as="sourcePoint" />
             <mxPoint x="480" y="533" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="250" y="350" />
-              <mxPoint x="495" y="350" />
-              <mxPoint x="495" y="381" />
+              <mxPoint x="490" y="350" />
+              <mxPoint x="490" y="360" />
             </Array>
           </mxGeometry>
         </mxCell>
