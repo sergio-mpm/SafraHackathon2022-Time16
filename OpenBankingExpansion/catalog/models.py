@@ -1,56 +1,47 @@
 from django.db import models
 
-class clienteid(models.Model):
-    cliente_id = models.TextField(primary_key=True)
-    secret = models.TextField()
-
-    class Meta:
-        ordering = ['-cliente_id']
+class ClienteId(models.Model):
+    cliente_id = models.CharField(max_length=50 ,primary_key=True, unique=True)
+    secret = models.CharField(max_length=100)
 
     # def tokenGen(self):
 
 
 class ClientePessoaNatural(models.Model):
-    cliente_id = models.TextField(primary_key=True)
-    nome_civil = models.TextField()
-    nome_social = models.TextField()
-    nome_marca = models.TextField()
-    nome_razaosocial = models.TextField()
-    cpf = models.IntegerField()
-    cnpj = models.IntegerField()
-    estado_civil = models.TextField()
-    sexo = models.TextField()
-    nacionalidade = models.TextField()
+    cliente_id = models.CharField(max_length=50 ,primary_key=True, unique=True)
+    nome_civil = models.CharField(max_length=255)
+    nome_social = models.CharField(max_length=255)
+    nome_marca = models.CharField(max_length=255)
+    nome_razaosocial = models.CharField(max_length=255)
+    cpf = models.IntegerField(null=True)
+    cnpj = models.IntegerField(null=True)
+    estado_civil = models.CharField(max_length=255)
+    sexo = models.CharField(max_length=255)
+    nacionalidade = models.CharField(max_length=255)
     data_nascimento = models.DateField()
-
-    class Meta:
-        ordering = ['-cliente_id']
 
 
 class ValorCliente(models.Model):
-    cliente_id = models.TextField(primary_key=True)
-    renda_fixa = models.FloatField()
-    data_renda = models.DateField()
-    creditcard_valorfaturapg = models.FloatField()
-    data_creditcard = models.DateField()
-    contacorrente = models.TextField()
-    data_contacorrente = models.TextField()
-    contapoupanca = models.TextField()
-    data_contapoupanca = models.DateField()
-    valor_financiamento = models.FloatField()
+    cliente_id = models.CharField(max_length=50 ,primary_key=True, unique=True)
+    renda_fixa = models.FloatField(null=True)
+    data_renda = models.DateField(null=True)
+    creditcard_valorfaturapg = models.FloatField(null=True)
+    data_creditcard = models.DateField(null=True)
+    contacorrente = models.CharField(max_length=255)
+    data_contacorrente = models.CharField(max_length=255)
+    contapoupanca = models.CharField(max_length=255)
+    data_contapoupanca = models.DateField(null=True)
+    valor_financiamento = models.FloatField(null=True)
     valor_parcela_financiamento = models.FloatField()
-    data_inicio_financ_contrato = models.DateField()
-    data_fim_financ_contrato = models.DateField()
-    valor_emprestimo = models.FloatField()
-    valor_parcela_emprestimo = models.FloatField()
-    data_inicio_emprest_contrato = models.DateField()
-    data_fim_emprest_contrato = models.DateField()
-    patrimonios = models.FloatField()
-    data_patrimonios = models.DateField()
-    data_consulta = models.DateField()
-
-    class Meta:
-        ordering = ['-cliente_id']
+    data_inicio_financ_contrato = models.DateField(null=True)
+    data_fim_financ_contrato = models.DateField(null=True)
+    valor_emprestimo = models.FloatField(null=True)
+    valor_parcela_emprestimo = models.FloatField(null=True)
+    data_inicio_emprest_contrato = models.DateField(null=True)
+    data_fim_emprest_contrato = models.DateField(null=True)
+    patrimonios = models.FloatField(null=True)
+    data_patrimonios = models.DateField(null=True)
+    data_consulta = models.DateField(auto_now_add=True)
 
     # def calcula_valor(self):
         # TO DO
@@ -60,31 +51,28 @@ class ValorCliente(models.Model):
 
 
 class ValorClienteConjunto(models.Model):
-    clienteconjunto_id = models.TextField(primary_key=True)
-    cliente_id = models.TextField()
-    cliente_id2 = models.TextField()
-    renda_fixa = models.FloatField()
-    data_renda = models.DateField()
-    creditcard_valorfaturapg = models.FloatField()
-    data_creditcard = models.DateField()
-    contacorrente = models.TextField()
-    data_contacorrente = models.TextField()
-    contapoupanca = models.TextField()
-    data_contapoupanca = models.DateField()
-    valor_financiamento = models.FloatField()
-    valor_parcela_financiamento = models.FloatField()
-    data_inicio_financ_contrato = models.DateField()
-    data_fim_financ_contrato = models.DateField()
-    valor_emprestimo = models.FloatField()
-    valor_parcela_emprestimo = models.FloatField()
-    data_inicio_emprest_contrato = models.DateField()
-    data_fim_emprest_contrato = models.DateField()
-    patrimonios = models.FloatField()
-    data_patrimonios = models.DateField()
-    data_consulta = models.DateField()
-
-    class Meta:
-        ordering = ['-cliente_id']
+    clienteconjunto_id = models.CharField(max_length=50 ,primary_key=True, unique=True)
+    cliente_id = models.CharField(max_length=50)
+    cliente_id2 = models.CharField(max_length=50)
+    renda_fixa = models.FloatField(null=True)
+    data_renda = models.DateField(null=True)
+    creditcard_valorfaturapg = models.FloatField(null=True)
+    data_creditcard = models.DateField(null=True)
+    contacorrente = models.CharField(max_length=255)
+    data_contacorrente = models.CharField(max_length=255)
+    contapoupanca = models.CharField(max_length=255)
+    data_contapoupanca = models.DateField(null=True)
+    valor_financiamento = models.FloatField(null=True)
+    valor_parcela_financiamento = models.FloatField(null=True)
+    data_inicio_financ_contrato = models.DateField(null=True)
+    data_fim_financ_contrato = models.DateField(null=True)
+    valor_emprestimo = models.FloatField(null=True)
+    valor_parcela_emprestimo = models.FloatField(null=True)
+    data_inicio_emprest_contrato = models.DateField(null=True)
+    data_fim_emprest_contrato = models.DateField(null=True)
+    patrimonios = models.FloatField(null=True)
+    data_patrimonios = models.DateField(null=True)
+    data_consulta = models.DateField(auto_now_add=True)
 
     # def calcula_valor(self):
         # TO DO
@@ -100,24 +88,18 @@ class ValorClienteConjunto(models.Model):
 
     
 class HistoricoValorCredito(models.Model):
-    cliente_id = models.TextField(primary_key=True)
-    valor_cliente = models.FloatField()
-    credito_cliente = models.FloatField()
-    data_consulta = models.DateField()
-
-    class Meta:
-        ordering = ['-cliente_id']
+    cliente_id = models.CharField(max_length=50 ,primary_key=True, unique=True)
+    valor_cliente = models.FloatField(null=True)
+    credito_cliente = models.FloatField(null=True)
+    data_consulta = models.DateField(auto_now_add=True)
 
     # def registra_consulta(Consulta: ValorCliente):
         # TO DO
 
     
 class PropostaCredito(models.Model):
-    cliente_id = models.TextField(primary_key=True)
-    credito_cliente = models.FloatField()
-    credito_recomendado = models.FloatField()
-    credito_preaprov = models.FloatField()
-    credito_limite = models.FloatField()
-
-    class Meta:
-        ordering = ['-cliente_id']
+    cliente_id = models.CharField(max_length=50 ,primary_key=True, unique=True)
+    credito_cliente = models.FloatField(null=True)
+    credito_recomendado = models.FloatField(null=True)
+    credito_preaprov = models.FloatField(null=True)
+    credito_limite = models.FloatField(null=True)

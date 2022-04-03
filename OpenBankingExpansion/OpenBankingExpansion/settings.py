@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-import ibm_db_django
+import os
+import mimetypes
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
@@ -77,13 +78,13 @@ WSGI_APPLICATION = 'OpenBankingExpansion.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'mssql',
         'NAME': 'openbankingexpansiondb',
-        'USERNAME': 'postgres',
-        'PASSWORD': 'administrator',
-        'HOST': 'openbankingexpansiondb.cbclvp7dwmrw.us-east-2.rds.amazonaws.com',
-        'PORT': '5432',
-        'PCONNECT': 'True', 
+        'USER': 'Safra',
+        'PASSWORD': 'Sucesso.22',
+        'HOST': 'openbankingexpansionserver.database.windows.net',
+        'PORT': '1433',
+        'PCONNECT': 'True',
     },
 }
 
