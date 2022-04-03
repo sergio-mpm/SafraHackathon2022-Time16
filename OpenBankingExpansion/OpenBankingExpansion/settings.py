@@ -57,7 +57,7 @@ ROOT_URLCONF = 'OpenBankingExpansion.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['OpenBankingExpansion/OpenBankingExpansion/Templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -86,6 +86,7 @@ DATABASES = {
         'PORT': '1433',
         'PCONNECT': 'True',
     },
+    
 }
 
 
