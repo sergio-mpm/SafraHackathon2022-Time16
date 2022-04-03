@@ -1,0 +1,23 @@
+Collecting ibm_db_django
+  Downloading ibm_db_django-1.5.1.0.tar.gz (52 kB)
+     ---------------------------------------- 52.6/52.6 KB 2.6 MB/s eta 0:00:00
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Requirement already satisfied: ibm_db>=3.0.1 in c:\users\sgmpm\envs\openbankingvenv\lib\site-packages (from ibm_db_django) (3.1.1)
+Requirement already satisfied: django>=3.2.* in c:\users\sgmpm\envs\openbankingvenv\lib\site-packages (from ibm_db_django) (3.2.12)
+Collecting six
+  Using cached six-1.16.0-py2.py3-none-any.whl (11 kB)
+Collecting regex
+  Downloading regex-2022.3.15-cp38-cp38-win32.whl (257 kB)
+     -------------------------------------- 257.9/257.9 KB 4.0 MB/s eta 0:00:00
+Requirement already satisfied: sqlparse>=0.2.2 in c:\users\sgmpm\envs\openbankingvenv\lib\site-packages (from django>=3.2.*->ibm_db_django) (0.4.2)
+Requirement already satisfied: pytz in c:\users\sgmpm\envs\openbankingvenv\lib\site-packages (from django>=3.2.*->ibm_db_django) (2022.1)
+Requirement already satisfied: asgiref<4,>=3.3.2 in c:\users\sgmpm\envs\openbankingvenv\lib\site-packages (from django>=3.2.*->ibm_db_django) (3.5.0)
+Building wheels for collected packages: ibm_db_django
+  Building wheel for ibm_db_django (setup.py): started
+  Building wheel for ibm_db_django (setup.py): finished with status 'done'
+  Created wheel for ibm_db_django: filename=ibm_db_django-1.5.1.0-py3-none-any.whl size=65130 sha256=bb8c9568084813d311f15cbd898d6f982c1106770ed98ec2036c218487fdd858
+  Stored in directory: c:\users\sgmpm\appdata\local\pip\cache\wheels\3c\c0\1e\5bb0d18645e78b05a701e6141dcc88b8663e62a510bdec566f
+Successfully built ibm_db_django
+Installing collected packages: six, regex, ibm_db_django
+Successfully installed ibm_db_django-1.5.1.0 regex-2022.3.15 six-1.16.0
