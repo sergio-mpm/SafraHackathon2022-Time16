@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'catalog.apps.CatalogConfig',
 ]
 
 MIDDLEWARE = [
@@ -77,8 +78,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'mssql',
         'NAME': 'OpenBankingExpansionServer',
-        'USERNAME': 'admin',
-        'PASSWORD': 'admin_root',
+        'USERNAME': 'default',
+        'PASSWORD': '',
         'HOST': 'http://127.0.0.1/',
         'PORT': '8080',
         'OPTIONS': {"driver": "ODBC Driver 17 for SQL Server",
@@ -111,13 +112,15 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
 
 USE_L10N = True
 
 USE_TZ = True
+
+DATE_FORMAT = 'd/m/Y'
 
 
 # Static files (CSS, JavaScript, Images)
