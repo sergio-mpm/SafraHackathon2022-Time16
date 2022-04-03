@@ -33,6 +33,7 @@ WITH TB_CLIENTE AS
       ,data_nascimento
 FROM [dbo].[catalog_clientepessoanatural]
 ),
+
 -------------------------------------------------------------TB_RENDA_FIXA---------------------------------------------------
 TB_RENDA_FIXA AS 
 (SELECT
@@ -46,6 +47,7 @@ TB_RENDA_FIXA AS
       cliente_id
       ,CAST(CONCAT(STR(YEAR(data_renda)),(REPLICATE('0', 2 - LEN(MONTH(data_renda))) + RTrim(MONTH(data_renda)))) AS INTEGER)
 ),
+
 -------------------------------------------------------------TB_CARTAO_CREDITO---------------------------------------------------
 TB_CARTAO_CREDITO AS 
 (SELECT
@@ -59,6 +61,7 @@ TB_CARTAO_CREDITO AS
       cliente_id
       ,CAST(CONCAT(STR(YEAR(data_creditcard)),(REPLICATE('0', 2 - LEN(MONTH(data_creditcard))) + RTrim(MONTH(data_creditcard)))) AS INTEGER)
 ),
+
 -------------------------------------------------------------TB_CONTACORRENTE---------------------------------------------------
 TB_CONTACORRENTE AS 
 (SELECT
@@ -71,6 +74,7 @@ TB_CONTACORRENTE AS
       cliente_id
       ,CAST(CONCAT(STR(YEAR(data_contacorrente)),(REPLICATE('0', 2 - LEN(MONTH(data_contacorrente))) + RTrim(MONTH(data_contacorrente)))) AS INTEGER)
 ),
+
 -------------------------------------------------------------TB_CONTAPOUPANCA---------------------------------------------------
 TB_CONTAPOUPANCA AS 
 (SELECT
@@ -84,6 +88,7 @@ TB_CONTAPOUPANCA AS
       cliente_id
       ,CAST(CONCAT(STR(YEAR(data_contapoupanca)),(REPLICATE('0', 2 - LEN(MONTH(data_contapoupanca))) + RTrim(MONTH(data_contapoupanca)))) AS INTEGER)
 ),
+
 -------------------------------------------------------------TB_PATRIMONIOS---------------------------------------------------
 TB_PATRIMONIOS AS 
 (SELECT
@@ -97,6 +102,7 @@ TB_PATRIMONIOS AS
       cliente_id
       ,CAST(CONCAT(STR(YEAR(data_patrimonios)),(REPLICATE('0', 2 - LEN(MONTH(data_patrimonios))) + RTrim(MONTH(data_patrimonios)))) AS INTEGER)
 ),
+
 -------------------------------------------------------------TB_CONSOLIDADO_FINANC_EMPRESTIMO---------------------------------------------------
 TB_CONSOLIDADO_FINANC_EMPRESTIMO AS
 (SELECT 
