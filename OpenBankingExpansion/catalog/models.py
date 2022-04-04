@@ -1,4 +1,6 @@
 from datetime import datetime
+from types import CellType
+from django.db import connection
 from django.db import models
 
 class ClienteId(models.Model):
@@ -20,6 +22,13 @@ class ClientePessoaNatural(models.Model):
     sexo = models.CharField(max_length=255)
     nacionalidade = models.CharField(max_length=255)
     data_nascimento = models.DateField()
+
+    def buscaClienteId(self, CPF_CNPJ: int):
+        id_query = "SELECT DISTINCT cliente_id FROM dbo.catalog_clientepessoanatural WHERE CASE WHEN cpf IS NOT NULL THEN (REPLICATE('0', 14 - LEN(cpf)) + RTrim(cpf)) ELSE (REPLICATE('0', 14 - LEN(cnpj)) + RTrim(cnpj)) END = (REPLICATE('0', 14 - LEN(@cpf_cnpj)) + RTrim(@cpf_cnpj))"
+        obj_valorcliente = ClientePessoaNatural.objects.raw(id_query)
+        for obj in obj_valorcliente:
+            cid = obj.cliente_id
+        return cid
 
 
 class ValorCliente(models.Model):
@@ -44,9 +53,18 @@ class ValorCliente(models.Model):
     data_patrimonios = models.DateField(null=True)
     data_consulta = models.DateField(auto_now_add=True)
 
+    def buscaClienteId(self, CPF_CNPJ: int):
+        id_query = "SELECT DISTINCT cliente_id FROM dbo.catalog_clientepessoanatural WHERE CASE WHEN cpf IS NOT NULL THEN (REPLICATE('0', 14 - LEN(cpf)) + RTrim(cpf)) ELSE (REPLICATE('0', 14 - LEN(cnpj)) + RTrim(cnpj)) END = (REPLICATE('0', 14 - LEN(@cpf_cnpj)) + RTrim(@cpf_cnpj))"
+        obj_valorcliente = ClientePessoaNatural.objects.raw(id_query)
+        for obj in obj_valorcliente:
+            cid = obj.cliente_id
+        
+        found_client = ValorCliente.vcmanager.filter(cid)
+
+
     # Entraria o algoritmo de cálculo de risco do Banco Safra para análise e retornaria o valor do cliente.
     def calcula_valor(self):
-        ValorPositivoCliente = ValorCliente.renda_fixa * 0.42
+        ValorPositivoCliente = self.renda_fixa * 0.42
         self.data_consulta = datetime.now()
         self.save()
         return ValorPositivoCliente
