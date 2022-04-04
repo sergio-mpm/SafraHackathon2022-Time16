@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,17 +6,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Tela 6</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="{% static '/css/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css/csspg6/styles.css' %}">
 </head>
 
 <body style="background: #00003c;">
     <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search" style="padding: 32px 52px 32px;">
-        <div class="container-fluid"><a class="navbar-brand" href="#" style="background: url(&quot;banco-safra.svg&quot;);"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navcol-1" style="background: url(&quot;assets/img/banco-safra%20Branco%20small.svg&quot;) no-repeat;background-size: contain;">
+        <div class="container-fluid"><a class="navbar-brand" href="#" style="background: url(&quot;static/img/banco-safra.svg&quot;);"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1" style="background: url(&quot;static/img/banco-safra%20Branco%20small.svg&quot;) no-repeat;background-size: contain;">
                 <form class="d-flex me-auto navbar-form" target="_self">
                     <div class="d-flex align-items-center"></div>
-                </form><span class="navbar-text"> <a class="login" href="#" style="background: url(&quot;Acessibilidade.png&quot;);"></a></span><a class="btn btn-light action-button" role="button" style="background: #d4ad68;width: 110px;font-weight: bold;" href="https://www.safra.com.br/atendimento/atendimento-ao-cliente.htm">Chat</a>
+                </form><span class="navbar-text"> <a class="login" href="#" style="background: url(&quot;static/img/Acessibilidade.png&quot;);"></a></span><a class="btn btn-light action-button" role="button" style="background: #d4ad68;width: 110px;font-weight: bold;" href="https://www.safra.com.br/atendimento/atendimento-ao-cliente.htm">Chat</a>
             </div>
         </div>
     </nav>
@@ -36,7 +37,7 @@
             <div class="col"><a class="btn btn-light action-button" role="button" href="https://forms.gle/ydGditUH8pMRV5za7" style="background: #ffffff;width: 310px;font-weight: bold;height: 40px;border-radius: 7px;">Deixe seu feedback</a></div>
         </div>
     </div><!-- End: 1 Row 2 Columns -->
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{% static 'css/bootstrap/js/bootstrap.min.js' %}"></script>
 </body>
 
 </html>

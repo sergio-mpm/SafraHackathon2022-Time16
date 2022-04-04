@@ -1,27 +1,28 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Safra Technee 2022</title>
     <meta name="description" content="Time 16">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static '/css/bootstrap/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
-    <link rel="stylesheet" href="assets/css/Footer-Dark.css">
-    <link rel="stylesheet" href="assets/css/Header-Blue.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="{% static '/css/csspg1/Footer-Dark.css' %}">
+    <link rel="stylesheet" href="{% static '/css/csspg1/Header-Blue.css' %}">
+    <link rel="stylesheet" href="{% static '/css/csspg1/styles.css' %}">
 </head>
 
 <body>
     <!-- Start: Header Blue -->
     <header class="header-blue" style="background: repeating-linear-gradient(-71deg, black, #62bada 0%, #c9e7f2 100%), #62bada;">
         <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search" style="padding: 32px 52px 32px;">
-            <div class="container-fluid"><a class="navbar-brand" href="#" style="background: url(&quot;assets/img/banco-safra.svg&quot;);"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navcol-1" style="background: url(&quot;assets/img/banco-safra.svg&quot;) no-repeat;">
+            <div class="container-fluid"><a class="navbar-brand" href="#" style="background: url(&quot;static/img/banco-safra.svg&quot;);"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navcol-1" style="background: url(&quot;static/img/banco-safra.svg&quot;) no-repeat;">
                     <form class="d-flex me-auto navbar-form" target="_self">
                         <div class="d-flex align-items-center"></div>
-                    </form><span class="navbar-text"> <a class="login" href="#" style="background: url(&quot;assets/img/Acessibilidade.png&quot;);"></a></span><a class="btn btn-light action-button" role="button" href="https://www.safra.com.br/atendimento/atendimento-ao-cliente.htm" style="background: #00003c;width: 110px;font-weight: bold;">Suporte</a>
+                    </form><span class="navbar-text"> <a class="login" href="#" style="background: url(&quot;static/img/Acessibilidade.png&quot;);"></a></span><a class="btn btn-light action-button" role="button" href="https://www.safra.com.br/atendimento/atendimento-ao-cliente.htm" style="background: #00003c;width: 110px;font-weight: bold;">Suporte</a>
                 </div>
             </div>
         </nav>
@@ -32,7 +33,7 @@
                     <h1 style="font-weight: bold;color: rgb(0,0,0);">Alugue um imóvel utilizando o Safra como garantia</h1>
                     <p style="text-align: left;color: #000000cc;font-weight: bold;">Não se prenda ao fiador, escolha a comodidade<br>Conheça as vantagens que o Safra pode oferecer <br><br></p><a class="btn btn-light btn-lg action-button" role="button" href="#simulation" style="background: #00003c;font-weight: bold;" data-bs-target="#newsletter-subscribe">Simule agora</a>
                 </div><!-- End: Text -->
-                <div class="col-md-5 col-lg-5 offset-lg-1 offset-xl-0 d-none d-lg-block phone-holder" style="background: url(&quot;assets/img/60667-small-house-vector.svg&quot;) center / auto no-repeat;">
+                <div class="col-md-5 col-lg-5 offset-lg-1 offset-xl-0 d-none d-lg-block phone-holder" style="background: url(&quot;static/img/60667-small-house-vector.svg&quot;) center / auto no-repeat;">
                     <!-- Start: iPhone -->
                     <div class="phone-mockup">
                         <div class="screen"></div>
@@ -50,7 +51,7 @@
                     <h1 style="font-weight: bold;color: rgb(0,0,0);">Como funciona</h1>
                     <p style="text-align: left;color: #000000cc;font-weight: bold;">O banco Safra será o seu fiador no aluguel de um imóvel. Temos parceria com o QuintoAndar. Faça uma simulação conosco e descubra quanto podemos fornecer em crédito.<br><br><br></p>
                 </div><!-- End: Text -->
-                <div class="col-md-5 col-lg-5 offset-lg-1 offset-xl-0 d-none d-lg-block phone-holder" style="background: url(&quot;assets/img/Value%20Props.svg&quot;) center / auto no-repeat;">
+                <div class="col-md-5 col-lg-5 offset-lg-1 offset-xl-0 d-none d-lg-block phone-holder" style="background: url(&quot;static/img/Value%20Props.svg&quot;) center / auto no-repeat;">
                     <!-- Start: iPhone -->
                     <div class="phone-mockup">
                         <div class="screen"></div>
@@ -79,7 +80,8 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <h1 style="font-weight: bold;font-size: 20PX;text-align: center;padding-top: 40PX;padding-bottom: 40PX;">Valor máximo de seguro fiança R$</h1>
+                            <!--<h1 style="font-weight: bold;font-size: 20PX;text-align: center;padding-top: 40PX;padding-bottom: 40PX;">Valor máximo de seguro fiança R$</h1>-->
+                            <h1 style="padding-bottom: 20px"></h1>
                         </div>
                     </div>
                 </div>
@@ -88,7 +90,7 @@
         <footer class="text-start footer-dark" style="background: #00003c;margin: 0px;padding-top: 100px;">
             <div class="container">
                 <div class="row">
-                    <div class="col text-center d-xxl-flex justify-content-xxl-center"><img class="d-xxl-flex justify-content-center align-content-center justify-content-xxl-center align-items-xxl-center" src="static/assets/img/Logo%20Safra%20Branco.svg"></div>
+                    <div class="col text-center d-xxl-flex justify-content-xxl-center"><img class="d-xxl-flex justify-content-center align-content-center justify-content-xxl-center align-items-xxl-center" src="static/img/Logo%20Safra%20Branco.svg"></div>
                 </div>
             </div>
             <div class="col text-center d-xxl-flex justify-content-xxl-center" style="padding: 46px;text-align: center;">
@@ -96,7 +98,7 @@
             </div>
         </footer><!-- End: Footer Dark -->
     </header><!-- End: Header Blue -->
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="static/css/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
 </html>

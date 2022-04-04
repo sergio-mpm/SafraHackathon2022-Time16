@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.db import connection
+from catalog.models import *
 
 # Create your views here.
 def index(request):
@@ -22,6 +23,16 @@ def Tela_3(request):
 
 def Tela_4(request):
     context ={}
+
+    if request.method == 'POST':
+        CPF = request.POST.get('CPF')
+        cliente = ValorCliente.objects.get(cpf=CPF)
+        cliente.calcula_credito()
+        proposta = PropostaCredito.objects.get(cliente.cliente_id)
+
+        context = {'creditodisponivel': proposta.credito_cliente, 'creditorecomendado': proposta.credito_recomendado, 'creditopreaprov': proposta.credito_preaprov, 'creditolimite': proposta.credito_limite}
+
+        return render(request,'Tela_5/tela5.html', context)
 
     return render(request, 'Tela_4/tela4.html', context)
 

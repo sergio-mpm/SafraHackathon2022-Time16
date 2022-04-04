@@ -15,14 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 from catalog import views
 
 urlpatterns = [
     path('', views.index, name='index'),
     path('Tela_2/tela2.html', views.Tela_2, name='Tela_2/tela2'),
     path('Tela_3/tela3.html', views.Tela_3, name='Tela_3/tela3'),
-    path('Tela_4/tela4.html', views.Tela_4, name='Tela_4'),
-    path('Tela_5/tela5.html', views.Tela_5, name='Tela_5'),
-    path('Tela_6/tela6.html', views.Tela_6, name='Tela_6'),
+    path('Tela_4/tela4.html', views.Tela_4, name='Tela_4/tela4'),
+    path('Tela_5/tela5.html', views.Tela_5, name='Tela_5/tela5'),
+    path('Tela_6/tela6.html', views.Tela_6, name='Tela_6/tela6'),
     path('admin/', admin.site.urls),
 ]

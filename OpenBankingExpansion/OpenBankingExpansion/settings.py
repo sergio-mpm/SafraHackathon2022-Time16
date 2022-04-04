@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 import os
 import mimetypes
+mimetypes.add_type("text/css", ".css", True)
+
+ENVIRONMENT = os.getenv('DJANGO_ENVIRONMENT', 'development')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
@@ -128,4 +131,13 @@ DATE_FORMAT = 'd/m/Y'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+MEDIA_URL = '/img/'
+
 STATIC_URL = '/static/'
+if ENVIRONMENT == 'development':
+    STATICFILES_DIRS = [
+        Path.joinpath(BASE_DIR, 'static'),
+        'D:/Trabalho/Projects/SafraHackathon2022-Time16/OpenBankingExpansion/OpenBankingExpansion/static/',
+    ]
+else:
+    STATIC_ROOT = os.environ['STATIC_ROOT']
