@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="{% static '/css/csspg4/styles.css' %}">
 </head>
 
-<body style="background: #00003c;">
+<body style="background: #00003c;" onload="validationFunction();">
     <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search" style="padding: 32px 52px 32px;">
-        <div class="container-fluid"><a class="navbar-brand" href="#" style="background: url(&quot;static/img/banco-safra.svg&quot;);"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navcol-1" style="background: url(&quot;static/img/banco-safra%20Branco%20small.svg&quot;) no-repeat;background-size: contain;">
+        <div class="container-fluid"><a class="navbar-brand" href="#" style="background: url(&quot;img/banco-safra.svg&quot;);"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1" style="background: url(&quot;img/banco-safra%20Branco%20small.svg&quot;) no-repeat;background-size: contain;">
                 <form class="d-flex me-auto navbar-form" target="_self">
                     <div class="d-flex align-items-center"></div>
-                </form><span class="navbar-text"> <a class="login" href="#" style="background: url(&quot;static/img/Acessibilidade.png&quot;);"></a></span><a class="btn btn-light action-button" role="button" href="https://www.safra.com.br/atendimento/atendimento-ao-cliente.htm" style="background: #d4ad68;width: 110px;font-weight: bold;">Chat</a>
+                </form><span class="navbar-text"> <a class="login" href="#" style="background: url(&quot;img/Acessibilidade.png&quot;);"></a></span><a class="btn btn-light action-button" role="button" href="https://www.safra.com.br/atendimento/atendimento-ao-cliente.htm" style="background: #d4ad68;width: 110px;font-weight: bold;">Chat</a>
             </div>
         </div>
     </nav>
@@ -30,19 +30,29 @@
     <div class="container">
         <div class="row">
             <div class="col" style="padding-top: 70px;">
-                <h1 class="text-center" style="color: rgb(255,255,255);padding-top: 40px;font-size: 20px;">Informe seu CPF</h1>
+                <h1 class="text-center" style="color: rgb(255,255,255);padding-top: 40px;font-size: 20px;">Informe seu CPF/CNPJ</h1>
             </div>
         </div>
     </div><!-- Start: 1 Row 2 Columns -->
     <div class="container">
         <div class="row">
-            <div class="col" style="text-align: center;"><input class="border rounded" type="number" style="text-align: center;width: 489px;height: 40px;margin-bottom: 40px;" name="CPF" placeholder="000.000.000-00" required="true"></div>
+            <div class="col" style="text-align: center;" name="dados">
+                <form>
+                    <input class="border rounded" type="number" style="text-align: center;width: 489px;height: 40px;margin-bottom: 40px;" name="CPF" id="CPF" placeholder="000.000.000-00" required="true">
+                </form>
+            </div>
         </div>
         <div class="row text-center">
             <div class="col"><a class="btn btn-light action-button" role="button" href="../Tela_5/tela5.html" style="background: #d4ad68;width: 110px;font-weight: bold;">Prosseguir</a></div>
         </div>
     </div><!-- End: 1 Row 2 Columns -->
     <script src="{% static 'css/bootstrap/js/bootstrap.min.js' %}"></script>
+    
+<script>
+    function validationFunction() {
+      document.getElementById("CPF").required = true;
+    }
+</script>
 </body>
 
 </html>

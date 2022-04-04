@@ -30,6 +30,10 @@ def Tela_4(request):
         cliente.calcula_credito()
         proposta = PropostaCredito.objects.get(cliente.cliente_id)
 
+        context = {'creditodisponivel': proposta.credito_cliente, 'creditorecomendado': proposta.credito_recomendado, 'creditopreaprov': proposta.credito_preaprov, 'creditolimite': proposta.credito_limite}
+
+        return render(request,'Tela_5/tela5.html', context)
+
     return render(request, 'Tela_4/tela4.html', context)
 
 
